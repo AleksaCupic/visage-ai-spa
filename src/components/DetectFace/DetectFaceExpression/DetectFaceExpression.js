@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useReducer } from 'react'
 import { MyContext } from '../../../Context/Context';
-
+import StyledConfidence from './StyledConfidence/StyledConfidence'
 import styles from './DetectFaceExpression.module.css'
+import withContext from '../../../HOC/ContextWrapper/withContext';
 
 const detectFaceExpressionReducer=(state, action)=>{
     switch (action.type){
@@ -11,6 +12,8 @@ const detectFaceExpressionReducer=(state, action)=>{
                 prediction: action.payload.prediction,
                 confidence: action.payload.confidence
             }
+        default: 
+            return state
 
     }
 }
@@ -23,23 +26,21 @@ const initialState={
 
 
 /* eslint-disable */
-const DetectFaceExpression =()=>{
+const DetectFaceExpression =(props)=>{
 
     const[state, dispatch]=useReducer(detectFaceExpressionReducer,initialState);
 
-    const{prediction, loading, confidence}=state
+    const{prediction, loading, confidence}=state;
 
-    // const[prediction, setPrediction]=useState(null)
-    // const[loading, setLoading]=useState(true)
-    // const[confidence, setConfidence]=useState(null)
+    const predictionLabels=['Angry','Happy','Sad','Surprised'];
 
-    const predictionLabels=['Angry','Happy','Sad','Surprised']
 
-    const predictFacialExpression=()=>{
-        const image= document.getElementById("img")
-        if(loading){
-            predictModel(image);
-        }
+
+    const getImage=()=>{
+        const image=document.createElement('img');
+        image.src=props.context.getCanvas;
+        
+        return image;
     }
 
 
@@ -86,50 +87,45 @@ const DetectFaceExpression =()=>{
     }
 
 
-    const styledConfidence=()=>{
-        if(confidence>85){
-            return <span style={{color: 'green'}}>{confidence}%</span>
-        }else if(confidence > 70 && confidence <85){
-            return <span style={{color: 'orange'}}>{confidence}%</span>
-        }else{
-            return <span style={{color: 'red'}}>{confidence}%</span>
+
+    useEffect(()=>{
+        const image=getImage();
+
+        if(loading){
+            predictModel(image);
         }
-    }
 
-
-    useEffect(()=>predictFacialExpression(),[]);
+    },[]);
 
     return(
         loading ? 
         
-            <MyContext.Consumer>
-                {context=>(
-                    <div className={styles.detectFaceDiv}>
-                        <React.Fragment>
-                            {/*context.getCanvas*/}
-                            <img id="img" style={{display: 'none'}} src={context.getCanvas} alt=""/>
-                            <h1>Classifying emotion...</h1> 
-                        </React.Fragment>
-                    </div>
-                )}
-            </MyContext.Consumer>
+        <div className={styles.detectFaceDiv}>
+            <React.Fragment>
+                {/*context.getCanvas*/}
+                
+                <h1>Classifying emotion...</h1> 
+            </React.Fragment>
+        </div>
+                
 
         : 
-        <MyContext.Consumer>
-            {context=>(
-                <React.Fragment>
-                    <div className={styles.detectFaceDiv}>
+        
+            
+        <React.Fragment>
+            <div className={styles.detectFaceDiv}>
 
-                        {/*context.getCanvas */}
-                        <img id="img" style={{width: '200px', height: '250px', borderRadius: '5px'}} src={context.getCanvas} alt=""/>
-                        <h4>Prediction: {predictionLabels[prediction]}</h4>
+                {/*context.getCanvas */}
+                <img id="img" style={{width: '200px', height: '250px', borderRadius: '5px'}} src={props.context.getCanvas} alt=""/>
+                <h4>Prediction: {predictionLabels[prediction]}</h4>
 
-                        <h4>Confidence: {styledConfidence()}</h4>
-                    </div>
-                </React.Fragment>
-            )}
-        </MyContext.Consumer>
+                <h4>Confidence: <StyledConfidence confidence={confidence}/></h4>
+            </div>
+        </React.Fragment>
+         
+        
     )
 }
 
-export default DetectFaceExpression
+
+export default withContext(DetectFaceExpression);

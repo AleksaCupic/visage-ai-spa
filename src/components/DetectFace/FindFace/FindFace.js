@@ -54,11 +54,11 @@ const FindFace =(props)=>{
     }
     
     
-    const convertCanvasToPng=async(setCanvas)=>{
+    const convertCanvasToPng=(setCanvas)=>{
         
         const canvas = getCanvas();
         console.log("convertCanvasToPng: "+canvas)
-        const fullQuality = await canvas.toDataURL('image/png', 1);
+        const fullQuality = canvas.toDataURL('image/png', 1);
         setCanvas(fullQuality)
     }
     

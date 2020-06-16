@@ -9,7 +9,6 @@ const MyProvider=(props)=>{
 
     return(
         <MyContext.Provider value={{
-            name: 'Aleksa',
             setCanvas: setCanvas,
             getCanvas: canvas,
             setImage: setImage,
