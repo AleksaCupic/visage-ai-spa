@@ -1,0 +1,55 @@
+.leftDiv{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0px;
+}
+
+.animateText{
+    animation: slideInSetPhoto 1s ease-in;
+    padding: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 15px;
+}
+
+@keyframes slideInSetPhoto{
+    from{margin-top: 300px; opacity: 0;}
+    to{margin-top: 0px; opacity: 1;}
+}
+
+.leftDiv h3{
+    font-size: 2.95em;
+}
+
+
+@media(max-width: 500px){
+    .leftDiv{
+        padding-top: 20px;
+    }
+    .leftDiv h3{
+        font-size: 2.4em;
+    }
+}
+
+.setPhoto{
+    font-size: 18px;
+    padding: 0px;
+}
+
+
+.uploadFileBtn{
+    display: inline-block; 
+    background: transparent; 
+    border: 1px solid #9679CF;
+    color: #9679CF;
+    width:30%; 
+    height: 38px;
+    z-index: 2;
+}
+
+.uploadFileInput{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}

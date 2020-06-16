@@ -1,0 +1,76 @@
+.logoImg{
+    float: left;
+    width: 50px;
+    height: 45px;
+}
+
+.logoText{
+    font-size: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    color: rgba(0,0,0,0.8);
+    text-decoration: none !important;
+}
+
+.navBar{
+    height: 50px;
+    border-bottom: 1px solid rgba(150, 121, 207,0.2);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 2;
+}
+
+.navBarMobile{
+    position: fixed;
+    top: auto;
+    text-align: center;
+    height: auto;
+    bottom: 0;
+    font-size: 20px;
+    background: rgba(150, 121, 207,0.8);
+    display: none;
+}
+
+.navBarMobile a{
+    color: #fff;
+}
+
+@media(max-width: 500px){
+    .navBarMobile{
+        display: inline-flex;
+    }
+}
+
+.navBar nav{
+    float: right;
+    margin-top: 15px;
+}
+
+.navBar nav ul li{
+    color: red;
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+@media(max-width: 500px){
+    .navBar nav ul li{display: none;}
+    .logoImg{position: relative; left: 27%;}
+    .logoText{position: relative; left: 25%;}
+}
+
+.navBar nav ul li a{
+    color: rgba(0,0,0,0.5);
+    font-weight: bold;
+    font-size: 17px;
+} 
+
+.navBar nav ul li .active{
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: rgba(51, 92, 255,0.5);
+}

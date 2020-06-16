@@ -1,0 +1,30 @@
+.aboutProject{
+    margin-top: 120px;
+    min-height: 101vh;
+}   
+
+.aboutProjectH1{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 4em;
+    animation: textAnimationH1 1.5s ease-in;
+}
+
+.aboutProjectH1:after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px rgba(0,0,0,0.4);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    animation: expandBorder 3s forwards;
+}
+
+@keyframes textAnimationH1{
+    from {opacity: 0; text-underline-width: 0%}
+    to {opacity: 1; text-underline-width: 100%};
+}
+
+@keyframes expandBorder{
+    from{transform: scaleX(0);}
+    to{transform: scaleX(1);}
+}

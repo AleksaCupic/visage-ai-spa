@@ -1,0 +1,14 @@
+.footer{
+    padding-top: 10px;
+    bottom: 0;
+    text-align: center;
+    margin: 0px;
+    font-size: 15px;
+    color: rgba(0,0,0,0.6);
+}
+
+@media(max-width: 880px){
+    .footer{
+        margin-bottom: 30px;
+    }
+}
