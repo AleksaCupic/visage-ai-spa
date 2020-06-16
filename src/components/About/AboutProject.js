@@ -4,7 +4,7 @@ import FadeInComponent from '../../HOC/Animations/FadeInComponent/FadeInComponen
 
 import SlideInRightComponent from '../../HOC/Animations/SlideInRightComponent/SlideInRightComponent'
 
-import getUniqeId from '../../HOC/HelperFunctions/getUniqeId'
+import getUniqueId from '../../HOC/HelperFunctions/getUniqeId'
 
 import ProjectIntro from './AboutComponents/ProjectIntro/ProjectIntro'
 import BenefitsComponent from './AboutComponents/BenefitsComponent/BenefitsComponent'
@@ -18,11 +18,11 @@ const AboutProject=()=>{
                 <h1 className={styles.aboutProjectH1}>About This Project</h1>
 
 
-                <FadeInComponent uniqueId={getUniqeId()}>
+                <FadeInComponent uniqueId={getUniqueId()}>
                     <ProjectIntro />
                 </FadeInComponent>
 
-                <SlideInRightComponent uniqueId={getUniqeId()}>
+                <SlideInRightComponent uniqueId={getUniqueId()}>
                     <BenefitsComponent />
                 </SlideInRightComponent>
                 
@@ -30,12 +30,12 @@ const AboutProject=()=>{
 
                 <ReasearchProcessComponent />
 
-                <FadeInComponent uniqueId={getUniqeId()}>
+                <FadeInComponent uniqueId={getUniqueId()}>
                     <ModelComponent />
                 </FadeInComponent>
 
 
-                <FadeInComponent uniqueId={getUniqeId()}>
+                <FadeInComponent uniqueId={getUniqueId()}>
                     <br />
                     <br />
                     <br />

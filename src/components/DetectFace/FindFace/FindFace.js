@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import styles from './FindFace.module.css'
-import Backdrop from '../../Backdrop/Backdrop';
+import Backdrop from '../../../UI/Backdrop/Backdrop';
 import withContext from '../../../HOC/ContextWrapper/withContext'
 import Loading from './Loading/Loading';
 import ConfirmFace from './ConfirmFace/ConfirmFace'

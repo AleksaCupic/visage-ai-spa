@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FindFace from './FindFace/FindFace';
 import DetectFaceExpression from './DetectFaceExpression/DetectFaceExpression';
-import Backdrop from '../../components/Backdrop/Backdrop'
+import Backdrop from '../../UI/Backdrop/Backdrop'
 
 const DetectFace =(props)=>{
     const[view, setView]=useState(0)

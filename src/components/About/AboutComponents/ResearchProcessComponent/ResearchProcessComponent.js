@@ -2,19 +2,20 @@ import React from 'react'
 
 import styles from './ResearchProcessComponent.module.css'
 import SlideInRightComponent from '../../../../HOC/Animations/SlideInRightComponent/SlideInRightComponent'
+import getUniqueId from '../../../../HOC/HelperFunctions/getUniqeId'
 
-import getUniqeId from '../../../../HOC/HelperFunctions/getUniqeId'
+
 import SlideInLeftComponent from '../../../../HOC/Animations/SlideInLeftComponent/SlideInLeftComponent'
 import FadeInComponent from '../../../../HOC/Animations/FadeInComponent/FadeInComponent'
-import getUniqueId from '../../../../HOC/HelperFunctions/getUniqeId'
+
 const ReasearchProcessComponent=()=>{
     return(
         <div className={styles.reasearchProcessComponent}>
-            <FadeInComponent uniqueId={getUniqeId()}>
+            <FadeInComponent uniqueId={getUniqueId()}>
                 <center><h3>Research Process</h3></center>
             </FadeInComponent>
 
-            <SlideInRightComponent uniqueId={getUniqeId()}>
+            <SlideInRightComponent uniqueId={getUniqueId()}>
                 <br />
                 <br />
                 <br />
@@ -34,7 +35,7 @@ const ReasearchProcessComponent=()=>{
 
             </SlideInRightComponent>
 
-            <SlideInLeftComponent uniqueId={getUniqeId()}>
+            <SlideInLeftComponent uniqueId={getUniqueId()}>
                 <div className="row" style={{borderBottom: '1px solid rgba(0,0,0,0.1)', paddingBottom: '15px', marginTop: '100px'}}>
                     <div className="col-lg-8 col-12">
                         <h4>Started doing tests: cropped images performed better</h4>
