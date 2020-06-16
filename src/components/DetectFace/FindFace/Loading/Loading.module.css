@@ -1,0 +1,23 @@
+.detectFaceDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    z-index: 10;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@media(max-width: 500px){
+    .detectFaceDiv{
+        width: 100%;
+        top: 30%;
+    }
+
+    .detectFaceDiv h1{
+        font-size: 1.6em;
+    }
+}

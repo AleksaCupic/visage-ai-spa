@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import styles from './FindFace.module.css'
-import { MyContext } from '../../../Context/Context';
 import Backdrop from '../../Backdrop/Backdrop';
-
+import withContext from '../../../HOC/ContextWrapper/withContext'
+import Loading from './Loading/Loading';
+import ConfirmFace from './ConfirmFace/ConfirmFace'
 
 /* eslint-disable */
 const FindFace =(props)=>{
@@ -18,17 +19,18 @@ const FindFace =(props)=>{
 
         if(!loading) return 
 
-        const image =document.getElementById('imageDet')
+        const image= document.createElement('img');
+        image.src= props.context.getImage;
 
         // Get face coordinates 
-        const detections=await faceapi.detectSingleFace(image)
+        const detections=await faceapi.detectSingleFace(image);
 
         
         if(!detections) return props.toggleDetectFace();
         
 
         // If detected face change modal view
-        setLoading(false)
+        setLoading(false);
 
 
         // Draw into canvas
@@ -49,17 +51,17 @@ const FindFace =(props)=>{
             detections.box.width, detections.box.height,   // "Get" a (w * h) area from the source image (crop),
             0, 0,     // Place the result at 0, 0 in the canvas,
             300, 150 // With as width / height: 100 * 100 (scale)
-        )
+        );
 
     }
     
     
-    const convertCanvasToPng=(setCanvas)=>{
+    const convertCanvasToPng=()=>{
         
         const canvas = getCanvas();
         console.log("convertCanvasToPng: "+canvas)
         const fullQuality = canvas.toDataURL('image/png', 1);
-        setCanvas(fullQuality)
+        props.context.setCanvas(fullQuality)
     }
     
     const getCanvas=()=>{
@@ -76,43 +78,23 @@ const FindFace =(props)=>{
     
 
     return (
-        <MyContext.Consumer>
-            {context=>(
-                <React.Fragment>
-                    <Backdrop />
-                    <img style={{display: 'none'}} id="imageDet" src={context.getImage} alt=""/>
-                    
-                    {loading ? 
-                        <div className={`${styles.detectFaceDiv} ${styles.animateFace}`}>
-                            
-                            <h1> Looking for your face...</h1>
-                            <img style={{width: '25%'}} src="/images/searchingForFace.gif" alt="searching"/>
+            <React.Fragment>
+                <Backdrop />
+                
+                {loading ? 
+                    <Loading />
+                    :
+                    <ConfirmFace 
+                        convertCanvasToPng={convertCanvasToPng}
+                        setView={props.setView}
+                        toggleDetectFace={props.toggleDetectFace}
+                    />
+                }
 
-                        </div>
-                        :
-                        <div className={`${styles.detectFaceDiv} ${styles.loadConfirmBox}`}>
-                            <canvas className={styles.canvaImage} id="canvas"></canvas> 
-                            <h3>Is this your face?</h3>
-    
-                            <button 
-                            className={styles.confirmFace} 
-                            onClick={()=>{convertCanvasToPng(context.setCanvas); props.setView(1)}}
-                            >
-                                Yes
-                            </button>
-    
-                            <button 
-                            onClick={props.toggleDetectFace}
-                            className={styles.rejectFace}
-                            >No
-                            </button>
-                        </div>
-                    }
-    
-            </React.Fragment>
-            )}
-        </MyContext.Consumer>
+        </React.Fragment>
+           
     )
 }
 
-export default FindFace
+
+export default withContext(FindFace)
