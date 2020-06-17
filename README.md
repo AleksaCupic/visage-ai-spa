@@ -1,5 +1,7 @@
 <img src="https://i.ibb.co/7XWWGYn/Screen-Shot-2020-06-16-at-4-20-41-PM.png" width="100%"/>
 
+## Facial Emotion Classifier from Facial Expression using Deep Learning with Convolutional Neural Network
+
 I developed a model to recognize four (happy, angry, sad, surprised) human facial expressions from a picture. This project won 4th place at Southeastern CCSC (Consortium for Computing Sciences in Colleges).
 
 
