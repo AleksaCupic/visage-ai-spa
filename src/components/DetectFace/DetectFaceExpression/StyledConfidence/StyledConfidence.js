@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const StyledConfidence=({confidence})=>{
     if(confidence>85){
@@ -8,6 +9,10 @@ const StyledConfidence=({confidence})=>{
     }else{
         return <span style={{color: 'red'}}>{confidence}%</span>
     }
+}
+
+StyledConfidence.PropTypes={
+    confidence: PropTypes.number
 }
 
 export default StyledConfidence

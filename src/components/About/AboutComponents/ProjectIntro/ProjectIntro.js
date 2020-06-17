@@ -32,16 +32,23 @@ const ProjectIntro=()=>{
                 <div className="col-lg-6 col-12 motivation">
                 <center><h4><b>Motivation</b></h4></center>
                 <p>
-                    I derive joy from curiosity and the drive to solve issues and adding some 
-                    value to the world. Machine Learning is a trandy topic and I wanted to 
-                    learn more about it. The goal was to create a model from scratch and share the 
-                    results.
+                I derive joy from curiosity and
+                 the drive to solve issues and 
+                 adding some value to the world. 
+                 Machine Learning is a trendy topic and
+                  I wanted to learn more about it. The 
+                  goal was to create a model from scratch 
+                  and share the results.
+
                     <br /> 
                     <br />
-                    Facial emotion recogntion plays and important role in the fields of computer 
-                    vision and artificial intelligence. 
-                    Understanding facial emotion expressions could greatly benefit Health Care, Automotive, 
-                    Video Game, Produciton, and Marketing industry.
+                    Facial emotion recognition plays and 
+                    important role in the fields of computer 
+                    vision and artificial intelligence. Understanding 
+                    facial emotion expressions could greatly benefit 
+                    Health Care, Automotive, Video Game, Production, 
+                    and Marketing industry.
+
                 </p>
                 </div>
             </div>

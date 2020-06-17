@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Backdrop from '../../../UI/Backdrop/Backdrop';
 import withContext from '../../../HOC/ContextWrapper/withContext'
 import Loading from './Loading/Loading';
@@ -94,6 +95,15 @@ const FindFace =(props)=>{
            
     )
 }
+
+FindFace.propTypes={
+    getImage: PropTypes.string.isRequired,
+    toggleDetectFace: PropTypes.func.isRequired,
+    setCanvas: PropTypes.func.isRequired,
+    setView: PropTypes.func.isRequired
+}
+
+
 
 
 export default withContext(FindFace)

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from '../FindFace.module.css'
 
 const ConfirmFace=(props)=>{
@@ -30,6 +31,13 @@ const ConfirmFace=(props)=>{
             </button>
         </div>
     )
+}
+
+ConfirmFace.propTypes={
+    convertCanvasToPng: PropTypes.func.isRequired,
+    setView: PropTypes.func.isRequired,
+    toggleDetectFace: PropTypes.func.isRequired
+
 }
 
 export default ConfirmFace

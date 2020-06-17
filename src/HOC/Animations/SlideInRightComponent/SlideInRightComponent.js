@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
+
 import isInViewport from '../../HelperFunctions/IsVisible'
 
 import styles from './SlideInRightComponent.module.css'
@@ -39,6 +41,11 @@ const SlideInRightComponent=(props)=>{
             {props.children}
         </div>
     )
+}
+
+SlideInRightComponent.propTypes={
+    children: PropTypes.object.isRequired,
+    uniqueId: PropTypes.string.isRequired
 }
 
 export default SlideInRightComponent

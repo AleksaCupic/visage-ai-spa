@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import isInViewport from '../../HelperFunctions/IsVisible'
+import PropTypes from 'prop-types'
 
+import isInViewport from '../../HelperFunctions/IsVisible'
 import styles from './SlideInLeftComponent.module.css'
+
 const SlideInLeftComponent=(props)=>{
     const[loadComponent, setLoadComponent]=useState(false)
 
@@ -39,6 +41,11 @@ const SlideInLeftComponent=(props)=>{
             {props.children}
         </div>
     )
+}
+
+SlideInLeftComponent.propTypes={
+    children: PropTypes.object.isRequired,
+    uniqueId: PropTypes.string.isRequired
 }
 
 export default SlideInLeftComponent

@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useReducer } from 'react'
-import { MyContext } from '../../../Context/Context';
-import StyledConfidence from './StyledConfidence/StyledConfidence'
-import styles from './DetectFaceExpression.module.css'
+import React, { useEffect, useReducer } from 'react';
+import PropTypes from 'prop-types';
+import StyledConfidence from './StyledConfidence/StyledConfidence';
+import styles from './DetectFaceExpression.module.css';
 import withContext from '../../../HOC/ContextWrapper/withContext';
 
 const detectFaceExpressionReducer=(state, action)=>{
@@ -125,6 +125,10 @@ const DetectFaceExpression =(props)=>{
          
         
     )
+}
+
+DetectFaceExpression.propTypes={
+    setView: PropTypes.func,
 }
 
 
