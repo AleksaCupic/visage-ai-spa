@@ -7,12 +7,7 @@ const RightHeroSection=(props)=>{
     useEffect(
         ()=>{
             const currTimeout=setTimeout(()=>{
-                if(current+1<props.emotion.length){
-                    setCurrent(current+1)
-                }
-                if(current+1===props.emotion.length){
-                    setCurrent(0)
-                }
+                setCurrent(current+1===props.emotion.length ? 0 : current+1)
             }, 4000)
             
 

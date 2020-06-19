@@ -8,15 +8,10 @@ const CenterHeroSection=(props)=>{
     useEffect(
         ()=>{
             const currTimeout=setTimeout(()=>{
-                if(current+1<props.image.length){
-                    setCurrent(current+1)
-                }
-                if(current+1===props.image.length){
-                    setCurrent(0)
-                }
+                setCurrent(current+1===props.image.length ? 0 : current+1)
             }, 4000)
             
-            return ()=>{clearTimeout(currTimeout)}
+            return ()=>clearTimeout(currTimeout)
         }, [props.image, current]
     )
 
