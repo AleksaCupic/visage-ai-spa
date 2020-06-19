@@ -4,26 +4,18 @@
     height: 88vh;
     object-fit: cover;
     opacity: 0;
-    animation: imageFadeIn 2s ease-in-out;
+    animation: imageFadeInAndOut 4s ease-in-out infinite;
 }
 
-@keyframes imageFadeIn{
-    from{opacity: 0;}
-    to{opacity: 1;}
+@keyframes imageFadeInAndOut{
+    0%{opacity: 0;}
+    25%{opacity: 0.5}
+    50% {opacity: 1}
+    75%{opacity: .75}
+    100%{opacity: 0}
+    
 }
 
-.faceExpressionImgOut{
-    width: 90%;
-    height: 88vh;
-    object-fit: cover;
-    animation: imageFadeOut 2s ease-in-out;
-    opacity: 1;
-}
-
-@keyframes imageFadeOut{
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
 
 @media(max-width: 500px){
     .faceExpressionImgOut,

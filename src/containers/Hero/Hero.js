@@ -10,7 +10,7 @@ const Hero =()=>{
 
     const[detectFace, setDetectFace]=useState(false)
 
-    const images=[
+    const imageData=[
         {emotion: 'Happy', img: '/images/slider1.png'}, 
         {emotion: 'Angry', img:'/images/slider2.png'},
         {emotion: 'Sad', img:'/images/slider3.png'},
@@ -18,6 +18,7 @@ const Hero =()=>{
     ]
 
     const toggleDetectFace=()=>{
+        //Swith for pop up window
         return setDetectFace(!detectFace)
     }
 
@@ -31,9 +32,9 @@ const Hero =()=>{
 
                 <LeftHeroSection toggleDetectFace={toggleDetectFace}/>
 
-                <CenterHeroSection  image={images}/>
+                <CenterHeroSection  image={imageData}/>
 
-               <RightHeroSection emotion={images}/>
+               <RightHeroSection emotion={imageData}/>
 
             </div>
 

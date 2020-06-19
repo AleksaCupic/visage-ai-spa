@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './LeftHeroSection.module.css'
 import { MyContext } from '../../Context/Context'
 import exif from 'exif-js'
+import withContext from '../../HOC/ContextWrapper/withContext'
 
 const LeftHeroSection =(props)=>{
 
@@ -70,7 +71,7 @@ const LeftHeroSection =(props)=>{
         })
       }
 
-    const handleFileUpload=(event, setImage)=>{
+    const handleFileUpload=(event)=>{
         if(!event.target.files[0]){
           return
         }
@@ -79,7 +80,7 @@ const LeftHeroSection =(props)=>{
         .then(createImage)
         .then(rotate(undefined, event.target.files[0].type))
         .then(blob=>{
-            setImage(blob.src)
+            props.context.setImage(blob.src)
             props.toggleDetectFace()
         })
         
@@ -101,7 +102,7 @@ const LeftHeroSection =(props)=>{
                         <br />
                         <div className={`${styles.setPhoto} col-12`}>
         
-                            <input className={styles.uploadFileInput} type="file" id="img" name="img" onChange={(event)=>handleFileUpload(event, context.setImage)} accept="image/*" />
+                            <input className={styles.uploadFileInput} type="file" id="img" name="img" onChange={handleFileUpload} accept="image/*" />
 
                             <button className={styles.uploadFileBtn}>
                                 Upload
@@ -115,4 +116,4 @@ const LeftHeroSection =(props)=>{
     )
 }
 
-export default LeftHeroSection
+export default withContext(LeftHeroSection)

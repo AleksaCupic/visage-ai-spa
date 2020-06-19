@@ -3,7 +3,6 @@ import styles from './CenterHeroSection.module.css'
 
 
 const CenterHeroSection=(props)=>{
-    const[currentClass, setClass]=useState(null)
     const[current,setCurrent]=useState(0)
 
     useEffect(
@@ -16,11 +15,8 @@ const CenterHeroSection=(props)=>{
                     setCurrent(0)
                 }
             }, 4000)
-
-            const styleTimeout=setTimeout(()=>setClass(styles.faceExpressionImgOut), 2000)
-            setClass(styles.faceExpressionImg)
             
-            return ()=>{clearTimeout(currTimeout); clearTimeout(styleTimeout)}
+            return ()=>{clearTimeout(currTimeout)}
         }, [props.image, current]
     )
 
@@ -29,7 +25,7 @@ const CenterHeroSection=(props)=>{
     return(
         <div className={`${styles.centerSection} center photo col-lg-5 col-md-12`}>
             
-            <img id="picture" className={currentClass} src={props.image[current].img} alt=""/>
+            <img id="picture" className={styles.faceExpressionImg} src={props.image[current].img} alt=""/>
             
         </div>
     )

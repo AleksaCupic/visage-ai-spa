@@ -5,8 +5,10 @@ import Hero from './Hero/Hero'
 const Homepage =()=>{
     return(
         <React.Fragment>
-            <Nav />
-            <Hero />
+            <main>
+                <Nav />
+                <Hero />
+            </main>
         </React.Fragment>
     )
 }
