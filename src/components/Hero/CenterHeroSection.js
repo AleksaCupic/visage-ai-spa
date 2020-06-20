@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from "prop-types";
 import styles from './CenterHeroSection.module.css'
 
 
@@ -24,6 +25,10 @@ const CenterHeroSection=(props)=>{
             
         </div>
     )
+}
+
+CenterHeroSection.propTypes={
+    image: PropTypes.object.isRequired
 }
 
 export default CenterHeroSection

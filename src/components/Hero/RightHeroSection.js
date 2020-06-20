@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './RightHeroSection.module.css'
 
 const RightHeroSection=(props)=>{
@@ -22,6 +23,10 @@ const RightHeroSection=(props)=>{
             <h5><b>Emotion:</b> {props.emotion[current].emotion}</h5>
         </div>
     )
+}
+
+RightHeroSection.propTypes={
+    emotion: PropTypes.object.isRequired
 }
 
 export default RightHeroSection
