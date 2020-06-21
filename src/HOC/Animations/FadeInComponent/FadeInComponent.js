@@ -8,7 +8,7 @@ const FadeInComponent=(props)=>{
 
     useEffect(
         ()=>{
-            var el = document.getElementById('fadeInComponent'+props.uniqueId);
+            const el = document.getElementById('fadeInComponent'+props.uniqueId);
             
             if (isInViewport(el) && !loadComponent) {
                 setLoadComponent(true)
@@ -22,7 +22,9 @@ const FadeInComponent=(props)=>{
                 }   
             }
             
-            window.addEventListener('scroll', listener, true);
+            window.addEventListener('scroll', listener);
+
+            return ()=>window.removeEventListener('scroll',listener)
 
             
         },[loadComponent, props.eventListener, props.uniqueId]

@@ -23,9 +23,9 @@ const SlideInRightComponent=(props)=>{
                 }   
             }
             
-            window.addEventListener('scroll', listener, false);
+            window.addEventListener('scroll', listener);
 
-            //return(window.removeEventListener('scroll', listener, true))
+            return ()=>window.removeEventListener('scroll', listener)
         },[loadComponent, props.uniqueId]
     )
 
