@@ -3,7 +3,6 @@ import styles from './Hero.module.css'
 import LeftHeroSection from '../../components/Hero/LeftHeroSection'
 import CenterHeroSection from '../../components/Hero/CenterHeroSection'
 import RightHeroSection from '../../components/Hero/RightHeroSection'
-import Footer from '../../components/Footer/Footer'
 import DetectFace from '../../components/DetectFace/DetectFace'
 
 const Hero =()=>{
@@ -26,19 +25,20 @@ const Hero =()=>{
 
     return(
         <div className={`${styles.hero} col-12`}>
+            
             <div className={`${styles.rowMarginTop} row col-12`}>
 
                 {detectFace ? <DetectFace toggleDetectFace={toggleDetectFace}/> : null}
 
                 <LeftHeroSection toggleDetectFace={toggleDetectFace}/>
 
-                <CenterHeroSection  image={imageData}/>
+                <CenterHeroSection  images={imageData}/>
 
-               <RightHeroSection emotion={imageData}/>
+                <RightHeroSection emotions={imageData}/>
 
             </div>
 
-            <Footer />
+            
             
         </div>
     )

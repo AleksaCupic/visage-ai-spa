@@ -6,6 +6,7 @@ import About from './containers/About'
 
 import './App.css';
 import MyProvider from './Context/Context';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route  path="/"  component={Homepage} />
           </Switch>
         </BrowserRouter>
+        <Footer />
       </div>
     </MyProvider>
   );

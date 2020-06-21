@@ -12,7 +12,7 @@ const SlideInRightComponent=(props)=>{
     useEffect(
 
         ()=>{
-            var el = document.getElementById('slideInRightComponent'+props.uniqueId);
+            const el = document.getElementById('slideInRightComponent'+props.uniqueId);
 
         
 
@@ -44,8 +44,8 @@ const SlideInRightComponent=(props)=>{
 }
 
 SlideInRightComponent.propTypes={
-    children: PropTypes.object.isRequired,
-    uniqueId: PropTypes.string.isRequired
+    children: PropTypes.element.isRequired,
+    uniqueId: PropTypes.number.isRequired
 }
 
 export default SlideInRightComponent

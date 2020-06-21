@@ -4,7 +4,7 @@
     height: 88vh;
     object-fit: cover;
     opacity: 0;
-    animation: imageFadeInAndOut 4s ease-in-out infinite;
+    animation: imageFadeInAndOut 4s ease-out infinite;
 }
 
 @keyframes imageFadeInAndOut{

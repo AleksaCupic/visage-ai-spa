@@ -16,9 +16,7 @@ const ReasearchProcessComponent=()=>{
             </FadeInComponent>
 
             <SlideInRightComponent uniqueId={getUniqueId()}>
-                <br />
-                <br />
-                <br />
+                
                 <div className="row" style={{borderBottom: '1px solid rgba(0,0,0,0.1)', paddingBottom: '15px'}}>
                     <div className="col-lg-4 col-12">
                         <img style={{width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px'}} src="https://exporthub.co/wp-content/uploads/2018/04/Best-Content-Research-Tools-690x450.jpeg" alt=""/>

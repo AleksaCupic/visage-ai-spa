@@ -12,7 +12,7 @@ const SlideInLeftComponent=(props)=>{
     useEffect(
 
         ()=>{
-            var el = document.getElementById('slideInLeftComponent'+props.uniqueId);
+            const el = document.getElementById('slideInLeftComponent'+props.uniqueId);
 
         
 
@@ -44,8 +44,8 @@ const SlideInLeftComponent=(props)=>{
 }
 
 SlideInLeftComponent.propTypes={
-    children: PropTypes.object.isRequired,
-    uniqueId: PropTypes.string.isRequired
+    children: PropTypes.element.isRequired,
+    uniqueId: PropTypes.number.isRequired
 }
 
 export default SlideInLeftComponent
