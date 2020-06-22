@@ -97,9 +97,11 @@ const FindFace =(props)=>{
 }
 
 FindFace.propTypes={
-    getImage: PropTypes.string.isRequired,
+    context: PropTypes.shape({
+        getImage: PropTypes.string.isRequired,
+        setCanvas: PropTypes.func.isRequired
+    }),
     toggleDetectFace: PropTypes.func.isRequired,
-    setCanvas: PropTypes.func.isRequired,
     setView: PropTypes.func.isRequired
 }
 

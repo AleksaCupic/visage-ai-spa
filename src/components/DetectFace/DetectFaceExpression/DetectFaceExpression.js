@@ -10,7 +10,7 @@ const detectFaceExpressionReducer=(state, action)=>{
             return{
                 loading: false,
                 prediction: action.payload.prediction,
-                confidence: action.payload.confidence
+                confidence: Number(action.payload.confidence)
             }
         default: 
             return state
@@ -19,9 +19,9 @@ const detectFaceExpressionReducer=(state, action)=>{
 }
 
 const initialState={
-    prediction: '',
+    prediction: null,
     loading: true,
-    confidence: '',
+    confidence: null,
 }
 
 

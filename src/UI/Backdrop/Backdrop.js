@@ -12,7 +12,7 @@ const Backdrop =(props)=>{
 }
 
 Backdrop.propTypes={
-    toggleBackdrop: PropTypes.func.isRequired
+    toggleBackdrop: PropTypes.func
 }
 
 export default Backdrop

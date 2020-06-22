@@ -11,8 +11,8 @@ const StyledConfidence=({confidence})=>{
     }
 }
 
-StyledConfidence.PropTypes={
-    confidence: PropTypes.number
+StyledConfidence.propTypes={
+    confidence: PropTypes.number.isRequired
 }
 
 export default StyledConfidence
